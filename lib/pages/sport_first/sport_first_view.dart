@@ -5,7 +5,6 @@ import 'package:sports/pages/sport_first/current_page.dart';
 import 'package:sports/pages/sport_first/history_page.dart';
 import 'package:styled_widget/styled_widget.dart';
 
-import '../../router/sports_names.dart';
 import 'sport_first_logic.dart';
 
 class SportFirstPage extends StatefulWidget {
@@ -39,7 +38,7 @@ class _SportFirstPageState extends State<SportFirstPage>
           color: primaryColor,
           size: 40,
         ).marginOnly(left: 5).gestures(onTap: () {
-          Get.toNamed(SportsNames.addPlant)?.then((_) {
+          Get.toNamed('/add_plant')?.then((_) {
             controller.getData();
           });
         }),

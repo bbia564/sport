@@ -1,8 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sports/db_sports/db_sports.dart';
-import 'package:sports/router/sport_pages.dart';
-import 'package:sports/router/sports_names.dart';
+import 'package:sports/pages/sport_first/add_plant/add_plant_binding.dart';
+import 'package:sports/pages/sport_first/add_plant/add_plant_view.dart';
+import 'package:sports/pages/sport_first/sport_first_binding.dart';
+import 'package:sports/pages/sport_first/sport_first_view.dart';
+import 'package:sports/pages/sport_other/sport_other_binding.dart';
+import 'package:sports/pages/sport_other/sport_other_view.dart';
+import 'package:sports/pages/sport_second/feedback/feedback_back.dart';
+import 'package:sports/pages/sport_second/feedback/feedback_binding.dart';
+import 'package:sports/pages/sport_second/feedback/feedback_view.dart';
+import 'package:sports/pages/sport_second/sport_second_binding.dart';
+import 'package:sports/pages/sport_second/sport_second_view.dart';
+import 'package:sports/pages/sport_tab/sport_tab_binding.dart';
+import 'package:sports/pages/sport_tab/sport_tab_view.dart';
 
 Color primaryColor = const Color(0xff7fe514);
 Color bgColor = const Color(0xfff2f2f2);
@@ -20,8 +31,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      getPages: SportPages.list,
-      initialRoute: SportsNames.sportTab,
+      getPages: Beis,
+      initialRoute:'/sport',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -72,3 +83,12 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+List<GetPage<dynamic>> Beis = [
+  GetPage(name: '/sport', page: () => const SportOtherView(), binding: SportOtherBinding()),
+  GetPage(name: '/sport_tab', page: () => SportTabPage(), binding: SportTabBinding()),
+  GetPage(name: '/sport_other', page: () => const FeedbackBack()),
+  GetPage(name: '/sport_first', page: () => const SportFirstPage(), binding: SportFirstBinding()),
+  GetPage(name: '/sport_second', page: () => SportSecondPage(), binding: SportSecondBinding()),
+  GetPage(name: '/feedback', page: () => FeedbackPage(), binding: FeedbackBinding()),
+  GetPage(name: '/add_plant', page: () => AddPlantPage(), binding: AddPlantBinding())
+];

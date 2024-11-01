@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sports/router/sports_names.dart';
 import 'package:styled_widget/styled_widget.dart';
 
 import 'sport_second_logic.dart';
@@ -35,7 +34,7 @@ class SportSecondPage extends GetView<SportSecondLogic> {
           controller.cleanSportData();
           break;
         case 1:
-          Get.toNamed(SportsNames.feedback);
+          Get.toNamed('/feedback');
           break;
         case 2:
           controller.aboutSportApp(context);

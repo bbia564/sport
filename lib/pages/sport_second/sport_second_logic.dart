@@ -69,13 +69,13 @@ If you have any questions or concerns about our privacy policy, please contact u
       applicationName: info.appName,
       applicationVersion: info.version,
       applicationIcon: Image.asset(
-        'assets/launcher.webp',
+        'assets/start.png',
         width: 72,
         height: 72,
       ),
       children: [
         const Text(
-            """We can record your exercise schedule for you"""),
+            """Help you become a better you!"""),
       ],
       context: context,
     );
